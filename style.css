@@ -1,5 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+:root {
+  /* ? Colors */
+
+  /* * Primary */
+
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+
+  /* * Neutral */
+
+  --card-bg: hsla(216, 19%, 38%, 0.412);
+  --body-bg: hsl(217, 19%, 24%);
+
+  /* * Font Size */
+  --quote-font: 28px;
+
+  /* * Font weight */
+  --extra-bold: 800;
+
+  /* * Layout */
+  --mobile-breakpoint: 375px;
+  --desktop-breakpoint: 1440px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--body-bg);
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.advice-card {
+  max-width: 700px;
+  position: relative;
+  padding: 1em 3em;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+}
+
+.advice-id {
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  color: var(--neon-green);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.advice-text {
+  margin-top: 1.5rem;
+  font-weight: var(--extra-bold);
+  color: var(--light-cyan);
+  line-height: 1.5;
+}
+
+.divider {
+  margin: 2rem 0rem 2.5rem;
+  width: 100%;
+  height: 20px;
+  background-image: url('./images/pattern-divider-mobile.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+button.dice {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60px;
+  width: 60px;
+  outline: none;
+  border: none;
+  background-color: var(--neon-green);
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 200ms ease-in;
+}
+button.dice:hover {
+  box-shadow: 0 0 30px var(--neon-green);
+}
+
+@media (min-width: 375px) {
+  .advice-card {
+    padding: 2em 4em;
+  }
+  .divider {
+    background-image: url('./images/pattern-divider-desktop.svg');
+  }
 }
