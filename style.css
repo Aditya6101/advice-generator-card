@@ -91,6 +91,9 @@ button.dice {
 button.dice:hover {
   box-shadow: 0 0 30px var(--neon-green);
 }
+button.dice.spin > img {
+  animation: spin-dice 1s linear infinite;
+}
 
 @media (min-width: 375px) {
   .advice-card {
@@ -98,5 +101,23 @@ button.dice:hover {
   }
   .divider {
     background-image: url('./images/pattern-divider-desktop.svg');
+  }
+}
+
+@keyframes spin-dice {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  75% {
+    transform: rotateZ(270deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
   }
 }
